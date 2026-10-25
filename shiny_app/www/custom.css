@@ -1,0 +1,115 @@
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --card-radius: 14px;
+  --card-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+  --card-hover-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Navbar Premium */
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  font-size: 1.25rem !important;
+}
+
+/* Tarjetas y Contenedores */
+.card {
+  border-radius: var(--card-radius) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+}
+
+.card:hover {
+  box-shadow: var(--card-hover-shadow) !important;
+}
+
+.card-header {
+  background: transparent !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  font-weight: 700;
+  color: #0f172a;
+  padding: 1rem 1.25rem;
+}
+
+/* Value Boxes Modernos */
+.bslib-value-box {
+  border-radius: var(--card-radius) !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.bslib-value-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-hover-shadow) !important;
+}
+
+.bslib-value-box .value-box-value {
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px;
+}
+
+.bslib-value-box .value-box-title {
+  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+/* Sidebar Styling */
+.bslib-sidebar-layout>.sidebar {
+  background-color: #ffffff !important;
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #475569;
+}
+
+/* Pills & Badges */
+.badge-custom {
+  padding: 0.35em 0.65em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+/* Stat callouts */
+.stat-highlight {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* DataTables Styling */
+table.dataTable thead th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  border-bottom: 2px solid #cbd5e1 !important;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #f8fafc !important;
+}
