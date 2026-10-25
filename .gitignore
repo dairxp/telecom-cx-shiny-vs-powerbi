@@ -1,0 +1,45 @@
+# ==========================================
+# GitIgnore Profesional: Shiny & Power BI
+# Proyecto: telecom-cx-shiny-vs-powerbi
+# ==========================================
+
+# --- R & Positron / RStudio ---
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+.Rproj.user/
+.positron/
+.vscode/
+
+# --- Paquetes y Renv (si se usan entornos locales) ---
+renv/library/
+renv/local/
+renv/staging/
+
+# --- Power BI (.pbip y .pbix) ---
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/editorSettings.json
+*.tmp
+*.temp
+*AutoRecovery*
+~$*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# --- Sistema Operativo (Windows / Mac) ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# --- Logs y archivos de depuración ---
+*.log

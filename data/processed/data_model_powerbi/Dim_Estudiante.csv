@@ -1,0 +1,110 @@
+id_estudiante,edad,genero,area_academica,antiguedad_uso
+EST_001,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_002,21-23 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_003,27 años o más,Femenino,Ciencias Sociales,1 a 2 años
+EST_004,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_005,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_006,17-20 años,Femenino,Ciencias Sociales,1 a 2 años
+EST_007,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_008,17-20 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_009,21-23 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_010,21-23 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_011,17-20 años,Masculino,Biomédicas,6 meses a 1 año
+EST_012,24-26 años,Femenino,Ingenierías,1 a 2 años
+EST_013,21-23 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_014,17-20 años,Masculino,Biomédicas,Más de 2 años
+EST_015,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_016,21-23 años,Masculino,Ingenierías,Más de 2 años
+EST_017,24-26 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_018,21-23 años,Masculino,Biomédicas,Más de 2 años
+EST_019,17-20 años,Masculino,Ingenierías,Menos de 6 meses
+EST_020,17-20 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_021,17-20 años,Masculino,Ciencias Sociales,6 meses a 1 año
+EST_022,17-20 años,Femenino,Ciencias Sociales,1 a 2 años
+EST_023,21-23 años,Masculino,Ciencias Sociales,1 a 2 años
+EST_024,24-26 años,Femenino,Ingenierías,Más de 2 años
+EST_025,27 años o más,Femenino,Ciencias Sociales,Más de 2 años
+EST_026,27 años o más,Masculino,Ingenierías,Menos de 6 meses
+EST_027,24-26 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_028,24-26 años,Masculino,Ingenierías,Más de 2 años
+EST_029,21-23 años,Masculino,Biomédicas,Más de 2 años
+EST_030,17-20 años,Masculino,Ingenierías,Más de 2 años
+EST_031,21-23 años,Masculino,Ingenierías,Menos de 6 meses
+EST_032,21-23 años,Femenino,Biomédicas,Más de 2 años
+EST_033,21-23 años,Femenino,Ingenierías,Menos de 6 meses
+EST_034,17-20 años,Masculino,Ingenierías,Más de 2 años
+EST_035,24-26 años,Femenino,Ingenierías,Más de 2 años
+EST_036,21-23 años,Femenino,Ingenierías,Más de 2 años
+EST_037,27 años o más,Femenino,Ingenierías,6 meses a 1 año
+EST_038,17-20 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_039,27 años o más,Masculino,Ciencias Sociales,Más de 2 años
+EST_040,24-26 años,Masculino,Ingenierías,1 a 2 años
+EST_041,17-20 años,Masculino,Ingenierías,Más de 2 años
+EST_042,17-20 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_043,17-20 años,Masculino,Biomédicas,6 meses a 1 año
+EST_044,24-26 años,Masculino,Biomédicas,1 a 2 años
+EST_045,17-20 años,Femenino,Biomédicas,1 a 2 años
+EST_046,17-20 años,Masculino,Ingenierías,Menos de 6 meses
+EST_047,21-23 años,Masculino,Ingenierías,Más de 2 años
+EST_048,24-26 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_049,24-26 años,Masculino,Ingenierías,Más de 2 años
+EST_050,17-20 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_051,27 años o más,Masculino,Ingenierías,Menos de 6 meses
+EST_052,21-23 años,Femenino,Ingenierías,Menos de 6 meses
+EST_053,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_054,17-20 años,Femenino,Ciencias Sociales,1 a 2 años
+EST_055,24-26 años,Masculino,Biomédicas,1 a 2 años
+EST_056,21-23 años,Masculino,Biomédicas,Más de 2 años
+EST_057,24-26 años,Femenino,Ciencias Sociales,Más de 2 años
+EST_058,17-20 años,Masculino,Biomédicas,1 a 2 años
+EST_059,27 años o más,Femenino,Ciencias Sociales,1 a 2 años
+EST_060,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_061,21-23 años,Femenino,Ingenierías,Más de 2 años
+EST_062,21-23 años,Masculino,Ciencias Sociales,6 meses a 1 año
+EST_063,27 años o más,Masculino,Ingenierías,6 meses a 1 año
+EST_064,21-23 años,Masculino,Ciencias Sociales,Menos de 6 meses
+EST_065,21-23 años,Femenino,Biomédicas,6 meses a 1 año
+EST_066,24-26 años,Masculino,Ciencias Sociales,1 a 2 años
+EST_067,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_068,17-20 años,Masculino,Ingenierías,1 a 2 años
+EST_069,21-23 años,Masculino,Ingenierías,1 a 2 años
+EST_070,24-26 años,Femenino,Ingenierías,1 a 2 años
+EST_071,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_072,17-20 años,Masculino,Biomédicas,6 meses a 1 año
+EST_073,17-20 años,Masculino,Biomédicas,Menos de 6 meses
+EST_074,21-23 años,Femenino,Ingenierías,Menos de 6 meses
+EST_075,21-23 años,Masculino,Biomédicas,Más de 2 años
+EST_076,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_077,27 años o más,Masculino,Ingenierías,Más de 2 años
+EST_078,24-26 años,Masculino,Biomédicas,1 a 2 años
+EST_079,27 años o más,Femenino,Ingenierías,Más de 2 años
+EST_080,17-20 años,Masculino,Ciencias Sociales,1 a 2 años
+EST_081,21-23 años,Masculino,Ingenierías,1 a 2 años
+EST_082,21-23 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_083,17-20 años,Masculino,Ingenierías,6 meses a 1 año
+EST_084,21-23 años,Masculino,Ingenierías,Menos de 6 meses
+EST_085,24-26 años,Femenino,Biomédicas,Menos de 6 meses
+EST_086,24-26 años,Masculino,Ciencias Sociales,Menos de 6 meses
+EST_087,17-20 años,Masculino,Ciencias Sociales,6 meses a 1 año
+EST_088,27 años o más,Masculino,Ciencias Sociales,1 a 2 años
+EST_089,17-20 años,Femenino,Ciencias Sociales,6 meses a 1 año
+EST_090,21-23 años,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_091,21-23 años,Masculino,Ingenierías,Menos de 6 meses
+EST_092,21-23 años,Masculino,Biomédicas,Menos de 6 meses
+EST_093,17-20 años,Masculino,Ingenierías,Más de 2 años
+EST_094,21-23 años,Femenino,Biomédicas,1 a 2 años
+EST_095,21-23 años,Femenino,Ingenierías,6 meses a 1 año
+EST_096,21-23 años,Femenino,Ingenierías,6 meses a 1 año
+EST_097,27 años o más,Masculino,Ingenierías,1 a 2 años
+EST_098,21-23 años,Masculino,Ingenierías,6 meses a 1 año
+EST_099,27 años o más,Femenino,Ciencias Sociales,Más de 2 años
+EST_100,24-26 años,Femenino,Biomédicas,Más de 2 años
+EST_101,21-23 años,Masculino,Ingenierías,Más de 2 años
+EST_102,27 años o más,Femenino,Ciencias Sociales,Menos de 6 meses
+EST_103,24-26 años,Femenino,Biomédicas,Más de 2 años
+EST_104,24-26 años,Masculino,Biomédicas,1 a 2 años
+EST_105,21-23 años,Femenino,Ingenierías,Más de 2 años
+EST_106,27 años o más,Femenino,Ingenierías,Más de 2 años
+EST_107,21-23 años,Femenino,Ingenierías,6 meses a 1 año
+EST_108,27 años o más,Femenino,Biomédicas,Más de 2 años
+EST_109,17-20 años,Femenino,Ciencias Sociales,Más de 2 años

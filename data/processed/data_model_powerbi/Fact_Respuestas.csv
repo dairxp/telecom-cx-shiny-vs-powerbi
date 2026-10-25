@@ -1,0 +1,110 @@
+id_respuesta,id_estudiante,id_operador,timestamp,sat_cobertura,sat_velocidad,sat_atencion,sat_precio,sat_datos,csat_promedio,factor_importante,problema_principal,sat_general_texto,recomienda_texto,nps_category,nps_weight,cambio_texto,riesgo_churn,falla_universidad,falla_casa,falla_centro_puno,falla_rural,sin_fallas
+RESP_001,EST_001,1,24/6/2025 7:13:07,3,4,2,3,4,3.2,Velocidad de internet,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,0,1,0
+RESP_002,EST_002,2,28/6/2025 15:57:47,4,4,4,3,3,3.6,Velocidad de internet,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_003,EST_003,2,28/6/2025 16:01:18,2,3,2,3,2,2.4,Cantidad de datos (GB),Internet lento,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Alto,1,0,0,1,0
+RESP_004,EST_004,1,28/6/2025 16:58:56,3,3,3,3,4,3.2,Recomendación de otros,Ningún problema,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_005,EST_005,1,28/6/2025 17:00:20,4,4,5,4,5,4.4,Precio/costo del plan,Ningún problema,Satisfecho,No estoy seguro,Pasivo,0,Probablemente no,Bajo,0,1,0,0,0
+RESP_006,EST_006,2,28/6/2025 18:42:18,2,2,3,2,3,2.4,Velocidad de internet,Señal débil/intermitente,Insatisfecho,No estoy seguro,Pasivo,0,Probablemente no,Medio,1,1,0,1,0
+RESP_007,EST_007,3,28/6/2025 20:19:52,1,1,1,1,1,1.0,Precio/costo del plan,Señal débil/intermitente,Muy insatisfecho,No estoy seguro,Pasivo,0,Probablemente no,Medio,0,1,0,0,0
+RESP_008,EST_008,3,28/6/2025 20:31:20,1,1,1,1,1,1.0,Precio/costo del plan,Señal débil/intermitente,Muy insatisfecho,Probablemente no,Detractor,-1,Probablemente no,Medio,0,1,0,0,0
+RESP_009,EST_009,3,28/6/2025 20:58:52,4,4,5,5,4,4.4,Cobertura de señal,Internet lento,Satisfecho,No estoy seguro,Pasivo,0,Tal vez,Medio,0,0,0,1,0
+RESP_010,EST_010,2,28/6/2025 21:01:42,3,3,3,3,4,3.2,Cobertura de señal,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_011,EST_011,3,28/6/2025 21:18:16,3,3,2,4,3,3.0,Precio/costo del plan,Internet lento,Indiferente,No estoy seguro,Pasivo,0,Probablemente sí,Alto,0,1,0,1,0
+RESP_012,EST_012,2,28/6/2025 21:19:23,5,5,4,2,5,4.2,Velocidad de internet,Costos elevados,Muy insatisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_013,EST_013,1,28/6/2025 21:22:37,4,4,3,3,4,3.6,Velocidad de internet,Costos elevados,Satisfecho,Definitivamente sí,Promotor,1,Probablemente no,Bajo,0,1,0,1,0
+RESP_014,EST_014,3,28/6/2025 21:24:10,4,2,3,3,2,2.8,Cobertura de señal,Mala atención al cliente,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Alto,0,1,1,0,0
+RESP_015,EST_015,3,28/6/2025 21:27:43,2,4,4,4,4,3.6,Precio/costo del plan,Señal débil/intermitente,Insatisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,0,1,0
+RESP_016,EST_016,2,28/6/2025 21:59:16,3,3,2,3,3,2.8,Velocidad de internet,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_017,EST_017,3,29/6/2025 8:17:31,3,3,3,4,4,3.4,Promociones/ofertas,Internet lento,Insatisfecho,No estoy seguro,Pasivo,0,Definitivamente sí,Alto,1,0,0,0,0
+RESP_018,EST_018,2,29/6/2025 14:39:43,4,4,4,3,4,3.8,Velocidad de internet,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_019,EST_019,3,29/6/2025 14:46:46,4,3,3,3,3,3.2,Cantidad de datos (GB),Internet lento,Satisfecho,Definitivamente sí,Promotor,1,Probablemente no,Bajo,0,1,0,0,0
+RESP_020,EST_020,3,29/6/2025 15:39:33,4,3,1,4,4,3.2,Promociones/ofertas,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,0,0,0
+RESP_021,EST_021,3,29/6/2025 16:19:31,5,3,3,3,3,3.4,Promociones/ofertas,Datos insuficientes,Indiferente,No estoy seguro,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_022,EST_022,2,29/6/2025 18:17:22,3,4,3,4,4,3.6,Velocidad de internet,Datos insuficientes,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,0,0,0,0,1
+RESP_023,EST_023,1,29/6/2025 18:17:55,3,3,3,3,3,3.0,Cobertura de señal,Internet lento,Satisfecho,Probablemente no,Detractor,-1,Probablemente sí,Alto,0,1,0,0,0
+RESP_024,EST_024,1,29/6/2025 18:18:26,4,4,4,4,4,4.0,Cobertura de señal,Datos insuficientes,Insatisfecho,Probablemente no,Detractor,-1,Definitivamente sí,Alto,0,0,0,1,0
+RESP_025,EST_025,4,29/6/2025 18:19:07,1,2,2,2,1,1.6,Promociones/ofertas,Costos elevados,Satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Medio,0,1,0,1,0
+RESP_026,EST_026,2,30/6/2025 14:38:11,3,3,3,3,4,3.2,Velocidad de internet,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_027,EST_027,3,30/6/2025 15:08:43,1,1,2,5,3,2.4,Precio/costo del plan,Señal débil/intermitente,Muy insatisfecho,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,1,1,0,0,0
+RESP_028,EST_028,3,30/6/2025 15:12:13,3,3,3,4,4,3.4,Cobertura de señal,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,1,0,1,0,0
+RESP_029,EST_029,1,30/6/2025 15:23:34,4,5,4,5,5,4.6,Promociones/ofertas,Ningún problema,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,1,0
+RESP_030,EST_030,3,30/6/2025 15:27:32,3,4,4,4,3,3.6,Precio/costo del plan,Internet lento,Satisfecho,Definitivamente sí,Promotor,1,Tal vez,Medio,0,1,0,1,0
+RESP_031,EST_031,4,30/6/2025 15:30:55,2,3,3,2,3,2.6,Promociones/ofertas,Señal débil/intermitente,Indiferente,Probablemente no,Detractor,-1,Probablemente sí,Alto,0,0,1,1,0
+RESP_032,EST_032,2,30/6/2025 15:42:31,3,4,3,3,2,3.0,Velocidad de internet,Costos elevados,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_033,EST_033,2,30/6/2025 15:49:27,3,5,4,5,4,4.2,Velocidad de internet,Señal débil/intermitente,Satisfecho,Definitivamente sí,Promotor,1,Probablemente no,Bajo,0,0,0,1,0
+RESP_034,EST_034,3,30/6/2025 15:50:31,3,3,3,5,5,3.8,Cantidad de datos (GB),Señal débil/intermitente,Satisfecho,Probablemente no,Detractor,-1,Probablemente sí,Alto,0,0,0,0,1
+RESP_035,EST_035,1,30/6/2025 15:50:32,4,3,5,2,3,3.4,Cobertura de señal,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,0,0,0
+RESP_036,EST_036,4,30/6/2025 15:54:51,4,2,1,4,4,3.0,Cantidad de datos (GB),Señal débil/intermitente,Satisfecho,Probablemente no,Detractor,-1,Tal vez,Medio,0,0,0,1,0
+RESP_037,EST_037,3,30/6/2025 15:56:15,4,4,4,4,4,4.0,Cantidad de datos (GB),Datos insuficientes,Indiferente,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,0,0,0
+RESP_038,EST_038,2,30/6/2025 16:10:20,5,4,3,4,3,3.8,Precio/costo del plan,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_039,EST_039,1,30/6/2025 16:24:42,4,4,4,4,4,4.0,Recomendación de otros,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Definitivamente no,Bajo,1,1,1,1,0
+RESP_040,EST_040,1,30/6/2025 16:27:21,5,1,1,4,3,2.8,Promociones/ofertas,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_041,EST_041,3,30/6/2025 16:30:23,3,4,3,4,3,3.4,Precio/costo del plan,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_042,EST_042,2,30/6/2025 17:14:06,5,4,3,4,5,4.2,Precio/costo del plan,Ningún problema,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_043,EST_043,3,30/6/2025 17:15:41,3,3,3,4,4,3.4,Cobertura de señal,Señal débil/intermitente,Indiferente,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,1,0,0,0
+RESP_044,EST_044,1,30/6/2025 17:16:39,5,3,3,3,4,3.6,Cantidad de datos (GB),Mala atención al cliente,Indiferente,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,1,0,1,0,0
+RESP_045,EST_045,2,30/6/2025 17:18:00,4,4,4,4,1,3.4,Cantidad de datos (GB),Señal débil/intermitente,Insatisfecho,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,0,0,1,0,0
+RESP_046,EST_046,2,30/6/2025 17:32:58,3,3,3,2,2,2.6,Velocidad de internet,Internet lento,Indiferente,Probablemente no,Detractor,-1,Tal vez,Alto,1,0,0,0,0
+RESP_047,EST_047,2,30/6/2025 17:35:43,4,3,5,4,4,4.0,Cobertura de señal,Internet lento,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,0,0
+RESP_048,EST_048,3,30/6/2025 17:42:10,4,4,2,4,3,3.4,Promociones/ofertas,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,1,1,0
+RESP_049,EST_049,1,30/6/2025 17:42:45,4,4,4,4,4,4.0,Velocidad de internet,Señal débil/intermitente,Satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,1,0
+RESP_050,EST_050,1,30/6/2025 17:43:34,4,4,4,2,4,3.6,Precio/costo del plan,Costos elevados,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_051,EST_051,4,30/6/2025 17:44:53,3,4,3,3,3,3.2,Cantidad de datos (GB),Mala atención al cliente,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,0,0,1,0,0
+RESP_052,EST_052,4,30/6/2025 17:45:11,2,2,1,2,2,1.8,Recomendación de otros,Señal débil/intermitente,Insatisfecho,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,0,1,0,0,0
+RESP_053,EST_053,2,30/6/2025 17:45:11,4,3,2,3,3,3.0,Cobertura de señal,Internet lento,Indiferente,Probablemente no,Detractor,-1,Probablemente sí,Alto,1,1,0,1,0
+RESP_054,EST_054,3,30/6/2025 17:46:06,4,4,4,4,4,4.0,Cobertura de señal,Ningún problema,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_055,EST_055,1,30/6/2025 17:46:19,4,5,5,4,4,4.4,Velocidad de internet,Ningún problema,Satisfecho,Definitivamente sí,Promotor,1,Probablemente no,Bajo,0,0,0,1,0
+RESP_056,EST_056,2,30/6/2025 17:47:19,5,4,5,4,5,4.6,Cantidad de datos (GB),Ningún problema,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_057,EST_057,1,30/6/2025 17:48:30,5,5,5,5,5,5.0,Velocidad de internet,Ningún problema,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_058,EST_058,3,30/6/2025 17:50:04,4,4,3,4,4,3.8,Recomendación de otros,Mala atención al cliente,Indiferente,Probablemente sí,Pasivo,0,Tal vez,Medio,0,0,0,1,0
+RESP_059,EST_059,4,30/6/2025 17:51:21,3,4,3,3,4,3.4,Recomendación de otros,Internet lento,Indiferente,Probablemente no,Detractor,-1,Probablemente sí,Alto,0,0,1,1,0
+RESP_060,EST_060,2,30/6/2025 17:52:54,4,3,3,3,4,3.4,Cobertura de señal,Internet lento,Muy satisfecho,No estoy seguro,Pasivo,0,Probablemente no,Bajo,1,0,1,1,0
+RESP_061,EST_061,1,30/6/2025 17:53:56,5,5,4,5,5,4.8,Precio/costo del plan,Ningún problema,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_062,EST_062,1,30/6/2025 17:55:00,3,4,3,2,5,3.4,Recomendación de otros,Mala atención al cliente,Satisfecho,Definitivamente sí,Promotor,1,Probablemente sí,Alto,1,0,1,0,0
+RESP_063,EST_063,4,30/6/2025 17:56:03,4,3,2,3,2,2.8,Recomendación de otros,Señal débil/intermitente,Indiferente,No estoy seguro,Pasivo,0,Probablemente sí,Alto,1,0,1,0,0
+RESP_064,EST_064,3,30/6/2025 17:59:00,3,4,3,4,5,3.8,Cantidad de datos (GB),Señal débil/intermitente,Indiferente,Probablemente no,Detractor,-1,Probablemente sí,Alto,1,0,1,1,0
+RESP_065,EST_065,4,30/6/2025 18:00:12,4,3,3,3,3,3.2,Promociones/ofertas,Señal débil/intermitente,Indiferente,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,1,0,1,1,0
+RESP_066,EST_066,2,30/6/2025 18:01:25,5,3,4,4,4,4.0,Cantidad de datos (GB),Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,1,0,1,0,0
+RESP_067,EST_067,3,30/6/2025 18:02:37,5,4,4,5,5,4.6,Velocidad de internet,Costos elevados,Satisfecho,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,0,0
+RESP_068,EST_068,3,30/6/2025 18:03:28,4,4,4,4,4,4.0,Cobertura de señal,Mala atención al cliente,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,1,0,0,0,0
+RESP_069,EST_069,3,30/6/2025 18:04:26,4,3,4,3,3,3.4,Precio/costo del plan,Mala atención al cliente,Satisfecho,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,0,0
+RESP_070,EST_070,2,30/6/2025 18:05:34,5,3,4,5,5,4.4,Cantidad de datos (GB),Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,1,0,0,1,0
+RESP_071,EST_071,1,30/6/2025 18:06:58,3,5,5,5,5,4.6,Recomendación de otros,Datos insuficientes,Indiferente,No estoy seguro,Pasivo,0,Probablemente no,Bajo,1,0,1,1,0
+RESP_072,EST_072,3,30/6/2025 18:07:55,5,4,4,4,4,4.2,Precio/costo del plan,Señal débil/intermitente,Indiferente,No estoy seguro,Pasivo,0,Probablemente sí,Alto,1,1,1,0,0
+RESP_073,EST_073,3,30/6/2025 18:09:15,2,3,3,2,4,2.8,Velocidad de internet,Costos elevados,Insatisfecho,Probablemente no,Detractor,-1,Definitivamente sí,Alto,1,1,1,1,0
+RESP_074,EST_074,4,30/6/2025 18:10:21,3,2,3,3,3,2.8,Precio/costo del plan,Señal débil/intermitente,Insatisfecho,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,1,1,0,1,0
+RESP_075,EST_075,1,30/6/2025 18:11:10,5,5,3,4,4,4.2,Recomendación de otros,Internet lento,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,1,0
+RESP_076,EST_076,1,30/6/2025 18:12:03,4,3,3,3,4,3.4,Velocidad de internet,Mala atención al cliente,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,0,1,0,1,0
+RESP_077,EST_077,2,30/6/2025 18:13:01,5,5,4,3,4,4.2,Promociones/ofertas,Mala atención al cliente,Satisfecho,Probablemente no,Detractor,-1,Probablemente sí,Alto,1,0,0,1,0
+RESP_078,EST_078,1,30/6/2025 18:15:24,3,3,3,3,3,3.0,Velocidad de internet,Señal débil/intermitente,Satisfecho,Probablemente no,Detractor,-1,Probablemente sí,Alto,1,0,0,1,0
+RESP_079,EST_079,3,30/6/2025 18:15:29,2,2,2,3,2,2.2,Precio/costo del plan,Internet lento,Indiferente,Probablemente no,Detractor,-1,Tal vez,Alto,0,0,0,1,0
+RESP_080,EST_080,2,30/6/2025 18:17:05,4,4,4,4,4,4.0,Promociones/ofertas,Ningún problema,Muy satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_081,EST_081,3,30/6/2025 18:17:55,5,4,4,5,5,4.6,Precio/costo del plan,Ningún problema,Muy satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,1,0,0
+RESP_082,EST_082,3,30/6/2025 18:18:42,4,3,4,4,5,4.0,Promociones/ofertas,Internet lento,Satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,1,0
+RESP_083,EST_083,2,30/6/2025 18:19:38,5,4,4,5,5,4.6,Cobertura de señal,Datos insuficientes,Satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_084,EST_084,1,30/6/2025 18:20:16,5,5,5,5,5,5.0,Promociones/ofertas,Ningún problema,Muy satisfecho,Definitivamente sí,Promotor,1,Definitivamente sí,Alto,0,0,0,0,1
+RESP_085,EST_085,1,30/6/2025 18:21:14,5,4,4,4,4,4.2,Recomendación de otros,Ningún problema,Satisfecho,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,0,0,0,0,1
+RESP_086,EST_086,4,30/6/2025 18:22:28,3,2,2,2,3,2.4,Promociones/ofertas,Costos elevados,Insatisfecho,Definitivamente no,Detractor,-1,Definitivamente sí,Alto,1,0,1,1,0
+RESP_087,EST_087,4,30/6/2025 18:23:22,4,4,4,4,4,4.0,Velocidad de internet,Datos insuficientes,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_088,EST_088,2,30/6/2025 18:23:37,3,3,3,3,4,3.2,Promociones/ofertas,Señal débil/intermitente,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,0,0,0,1,0
+RESP_089,EST_089,2,30/6/2025 18:24:41,3,3,3,3,3,3.0,Promociones/ofertas,Datos insuficientes,Indiferente,Probablemente no,Detractor,-1,Probablemente sí,Alto,0,0,0,1,0
+RESP_090,EST_090,1,30/6/2025 18:25:31,4,3,3,3,3,3.2,Recomendación de otros,Costos elevados,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_091,EST_091,4,30/6/2025 18:26:39,3,3,3,3,3,3.0,Promociones/ofertas,Señal débil/intermitente,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,1,0,0
+RESP_092,EST_092,3,30/6/2025 18:27:37,4,3,4,3,4,3.6,Cobertura de señal,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,1,0,0,0,0
+RESP_093,EST_093,4,30/6/2025 18:28:34,5,4,5,4,4,4.4,Velocidad de internet,Mala atención al cliente,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_094,EST_094,3,30/6/2025 18:30:38,5,5,4,4,4,4.4,Recomendación de otros,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,0,1
+RESP_095,EST_095,1,30/6/2025 18:31:25,3,3,3,3,3,3.0,Velocidad de internet,Costos elevados,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_096,EST_096,2,30/6/2025 18:32:43,5,4,4,4,5,4.4,Promociones/ofertas,Mala atención al cliente,Satisfecho,No estoy seguro,Pasivo,0,Tal vez,Medio,0,0,0,0,1
+RESP_097,EST_097,1,30/6/2025 18:33:28,5,5,5,4,5,4.8,Precio/costo del plan,Ningún problema,Insatisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_098,EST_098,2,30/6/2025 18:34:58,5,4,5,4,5,4.6,Velocidad de internet,Datos insuficientes,Indiferente,No estoy seguro,Pasivo,0,Tal vez,Medio,0,0,0,0,1
+RESP_099,EST_099,4,30/6/2025 18:35:36,4,4,4,4,4,4.0,Velocidad de internet,Internet lento,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,1,0,0,1,0
+RESP_100,EST_100,1,30/6/2025 18:35:55,5,4,4,4,4,4.2,Recomendación de otros,Ningún problema,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,1,0,0,1,0
+RESP_101,EST_101,1,30/6/2025 18:36:04,3,4,3,5,2,3.4,Velocidad de internet,Costos elevados,Indiferente,No estoy seguro,Pasivo,0,Probablemente no,Bajo,1,0,0,0,0
+RESP_102,EST_102,2,30/6/2025 18:57:52,4,4,3,3,3,3.4,Cobertura de señal,Señal débil/intermitente,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,0,0,1,0
+RESP_103,EST_103,2,30/6/2025 19:16:05,3,3,3,3,3,3.0,Precio/costo del plan,Mala atención al cliente,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,0,0,0,1,0
+RESP_104,EST_104,2,30/6/2025 19:37:43,3,4,3,4,3,3.4,Velocidad de internet,Internet lento,Indiferente,Definitivamente sí,Promotor,1,Definitivamente no,Bajo,1,1,0,1,0
+RESP_105,EST_105,2,30/6/2025 20:13:39,4,4,4,5,5,4.4,Velocidad de internet,Señal débil/intermitente,Muy satisfecho,Definitivamente sí,Promotor,1,Probablemente no,Bajo,0,0,0,1,0
+RESP_106,EST_106,3,30/6/2025 21:06:45,1,1,1,1,1,1.0,Precio/costo del plan,Internet lento,Indiferente,No estoy seguro,Pasivo,0,Probablemente sí,Alto,0,0,0,1,0
+RESP_107,EST_107,2,1/7/2025 11:03:41,4,3,2,2,3,2.8,Cobertura de señal,Mala atención al cliente,Satisfecho,No estoy seguro,Pasivo,0,Tal vez,Alto,0,0,0,1,0
+RESP_108,EST_108,3,1/7/2025 19:40:14,3,4,4,4,4,3.8,Precio/costo del plan,Señal débil/intermitente,Satisfecho,Probablemente sí,Pasivo,0,Probablemente no,Bajo,0,1,1,0,0
+RESP_109,EST_109,2,3/7/2025 8:01:56,4,4,2,3,2,3.0,Cobertura de señal,Datos insuficientes,Satisfecho,Probablemente sí,Pasivo,0,Tal vez,Medio,0,0,0,1,0
