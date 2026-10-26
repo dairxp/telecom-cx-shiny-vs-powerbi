@@ -15,10 +15,22 @@ library(rsconnect)
 #   secret = "<TU_SECRET>"
 # )
 
-# PASO 2: Publicar la aplicación
-# Sube únicamente la carpeta shiny_app/ (que ya contiene datos, imágenes y módulos)
+# PASO 2: Resolver la ruta de la carpeta shiny_app (según dónde esté tu consola en Positron)
+app_dir <- if (dir.exists("shiny_app")) {
+  "shiny_app"
+} else if (dir.exists("../shiny_app")) {
+  "../shiny_app"
+} else if (file.exists("app.R")) {
+  "."
+} else {
+  "f:/dxp-projects/DevBasics/R y statistics/telecom-cx-shiny-vs-powerbi/shiny_app"
+}
+
+message("Publicando desde directorio: ", normalizePath(app_dir))
+
+# PASO 3: Publicar la aplicación
 deployApp(
-  appDir = "shiny_app",
+  appDir = app_dir,
   appName = "telecom-cx-una-puno",
   appTitle = "Telecom CX Analytics - UNA Puno",
   forceUpdate = TRUE
