@@ -8,21 +8,13 @@ mod_pain_points_ui <- function(id) {
       width = 1/2,
       fill = FALSE,
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Incidencia de Fallas por Entorno Geográfico"),
-          bsicons::bs_icon("geo-alt-fill")
-        ),
+        card_header("Incidencia de Fallas por Entorno Geográfico"),
         card_body(
           plotlyOutput(ns("plot_geo_issues"), height = "360px")
         )
       ),
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Principal Problema Experimentado por Operador"),
-          bsicons::bs_icon("tools")
-        ),
+        card_header("Principal Problema Experimentado por Operador"),
         card_body(
           plotlyOutput(ns("plot_main_issues"), height = "360px")
         )
@@ -33,14 +25,7 @@ mod_pain_points_ui <- function(id) {
     
     # Fila Inferior: Tabla de Datos Interactiva y Exportable
     card(
-      card_header(
-        class = "d-flex justify-content-between align-items-center",
-        div(
-          span("Explorador de Datos Detallado (Dataset Curado N=109)"),
-          span(" - Filtros y descarga en tiempo real", class = "text-muted small")
-        ),
-        bsicons::bs_icon("table")
-      ),
+      card_header("Explorador de Datos Detallado (Dataset Curado N=109)"),
       card_body(
         DTOutput(ns("table_raw_data"))
       )
@@ -83,10 +68,10 @@ mod_pain_points_server <- function(id, r_data) {
       ) %>%
         layout(
           barmode = "group",
-          xaxis = list(title = "Entorno Territorial"),
+          xaxis = list(title = "", tickangle = 0),
           yaxis = list(title = "N° Reportes de Fallas"),
-          legend = list(orientation = "h", x = 0.1, y = -0.2),
-          margin = list(t = 20, b = 50, l = 40, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.15),
+          margin = list(t = 45, b = 30, l = 45, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })
@@ -117,8 +102,8 @@ mod_pain_points_server <- function(id, r_data) {
           barmode = "stack",
           xaxis = list(title = "Cantidad de Estudiantes"),
           yaxis = list(title = ""),
-          legend = list(orientation = "h", x = 0.1, y = -0.2),
-          margin = list(t = 20, b = 40, l = 160, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.15),
+          margin = list(t = 45, b = 40, l = 160, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })

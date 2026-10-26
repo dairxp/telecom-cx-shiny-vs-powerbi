@@ -1,38 +1,38 @@
+# ==============================================================================
+# mod_kpis.R - Módulo 1: Resumen Ejecutivo y KPIs (Estilo AdminLTE Limpio)
+# ==============================================================================
+
 mod_kpis_ui <- function(id) {
   ns <- NS(id)
   
   tagList(
-    # Fila de Value Boxes (KPIs principales)
+    # Fila de Tarjetas KPI: Color Completo Pastel, Sin Lineas Superiores
     layout_column_wrap(
       width = 1/4,
       fill = FALSE,
-      value_box(
-        title = "Muestra Filtrada",
-        value = textOutput(ns("vb_sample")),
-        showcase = bsicons::bs_icon("people-fill"),
-        theme = "primary",
-        p(textOutput(ns("vb_sample_sub")), class = "text-muted small mb-0")
+      div(
+        class = "kpi-card kpi-card-blue",
+        div(class = "kpi-title", "Muestra Filtrada"),
+        div(class = "kpi-value", textOutput(ns("vb_sample"))),
+        p(class = "kpi-subtext", textOutput(ns("vb_sample_sub")))
       ),
-      value_box(
-        title = "CSAT Promedio",
-        value = textOutput(ns("vb_csat")),
-        showcase = bsicons::bs_icon("star-fill"),
-        theme = "info",
-        p(textOutput(ns("vb_csat_sub")), class = "text-muted small mb-0")
+      div(
+        class = "kpi-card kpi-card-cyan",
+        div(class = "kpi-title", "CSAT Promedio"),
+        div(class = "kpi-value", textOutput(ns("vb_csat"))),
+        p(class = "kpi-subtext", textOutput(ns("vb_csat_sub")))
       ),
-      value_box(
-        title = "Net Promoter Score (NPS)",
-        value = textOutput(ns("vb_nps")),
-        showcase = bsicons::bs_icon("speedometer2"),
-        theme = "success",
-        p(textOutput(ns("vb_nps_sub")), class = "text-muted small mb-0")
+      div(
+        class = "kpi-card kpi-card-green",
+        div(class = "kpi-title", "Net Promoter Score (NPS)"),
+        div(class = "kpi-value", textOutput(ns("vb_nps"))),
+        p(class = "kpi-subtext", textOutput(ns("vb_nps_sub")))
       ),
-      value_box(
-        title = "Riesgo de Churn Alto",
-        value = textOutput(ns("vb_churn")),
-        showcase = bsicons::bs_icon("exclamation-triangle-fill"),
-        theme = "danger",
-        p(textOutput(ns("vb_churn_sub")), class = "text-muted small mb-0")
+      div(
+        class = "kpi-card kpi-card-red",
+        div(class = "kpi-title", "Riesgo de Churn Alto"),
+        div(class = "kpi-value", textOutput(ns("vb_churn"))),
+        p(class = "kpi-subtext", textOutput(ns("vb_churn_sub")))
       )
     ),
     
@@ -43,43 +43,35 @@ mod_kpis_ui <- function(id) {
       width = 1/2,
       fill = FALSE,
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Cuota de Mercado (Market Share en Muestra)"),
-          bsicons::bs_icon("pie-chart-fill")
-        ),
+        card_header("Cuota de Mercado en Muestra (Market Share)"),
         card_body(
-          plotlyOutput(ns("plot_market_share"), height = "360px")
+          plotlyOutput(ns("plot_market_share"), height = "340px")
         )
       ),
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Desglose NPS por Operador (% Promotores vs Detractores)"),
-          bsicons::bs_icon("bar-chart-fill")
-        ),
+        card_header("Desglose NPS por Operador (% Promotores vs Detractores)"),
         card_body(
-          plotlyOutput(ns("plot_nps_breakdown"), height = "360px")
+          plotlyOutput(ns("plot_nps_breakdown"), height = "340px")
         )
       )
     ),
     
     br(),
     
-    # Fila Demográfica
+    # Fila Demográfica (Con leyendas arriba y sin choque con eje X)
     layout_column_wrap(
       width = 1/2,
       fill = FALSE,
       card(
         card_header("Distribución por Área Académica (UNA Puno)"),
         card_body(
-          plotlyOutput(ns("plot_area_dist"), height = "300px")
+          plotlyOutput(ns("plot_area_dist"), height = "340px")
         )
       ),
       card(
-        card_header("Intención de Fuga (Churn) según Antigüedad"),
+        card_header("Intención de Fuga (Churn) según Antigüedad de Uso"),
         card_body(
-          plotlyOutput(ns("plot_churn_tenure"), height = "300px")
+          plotlyOutput(ns("plot_churn_tenure"), height = "340px")
         )
       )
     )
@@ -99,7 +91,7 @@ mod_kpis_server <- function(id, r_data) {
     output$vb_sample_sub <- renderText({
       req(r_data())
       pct <- round((nrow(r_data()) / nrow(df_curado)) * 100, 1)
-      paste0(pct, "% del total general (N=109)")
+      paste0(pct, "% del total (N=109)")
     })
     
     output$vb_csat <- renderText({
@@ -111,11 +103,11 @@ mod_kpis_server <- function(id, r_data) {
     
     output$vb_csat_sub <- renderText({
       req(r_data())
-      if (nrow(r_data()) == 0) return("Sin datos")
+      if (nrow(r_data()) == 0) return("Sin registros")
       score <- mean(r_data()$csat_promedio, na.rm = TRUE)
-      if (score >= 3.7) "Calificación Favorable"
-      else if (score >= 3.2) "Calificación Regular"
-      else "Calificación Crítica"
+      if (score >= 3.7) "Nivel Favorable"
+      else if (score >= 3.2) "Nivel Regular"
+      else "Nivel Crítico"
     })
     
     output$vb_nps <- renderText({
@@ -128,7 +120,7 @@ mod_kpis_server <- function(id, r_data) {
     output$vb_nps_sub <- renderText({
       req(r_data())
       res <- calc_nps(r_data())
-      paste0("Prom: ", res$pct_prom, "% | Det: ", res$pct_det, "%")
+      paste0("Promotores: ", res$pct_prom, "% | Detractores: ", res$pct_det, "%")
     })
     
     output$vb_churn <- renderText({
@@ -165,13 +157,12 @@ mod_kpis_server <- function(id, r_data) {
         hole = 0.55,
         marker = list(colors = colors_vec, line = list(color = "#FFFFFF", width = 2)),
         textinfo = "label+percent",
-        hoverinfo = "label+value+percent",
-        insidetextorientation = "radial"
+        hoverinfo = "label+value+percent"
       ) %>%
         layout(
           showlegend = TRUE,
-          legend = list(orientation = "h", x = 0.1, y = -0.1),
-          margin = list(t = 20, b = 40, l = 20, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.12),
+          margin = list(t = 30, b = 20, l = 20, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })
@@ -199,15 +190,15 @@ mod_kpis_server <- function(id, r_data) {
       ) %>%
         layout(
           barmode = "stack",
-          xaxis = list(title = "Operador"),
+          xaxis = list(title = "", tickangle = 0),
           yaxis = list(title = "Porcentaje (%)", range = c(0, 100)),
-          legend = list(orientation = "h", x = 0.1, y = -0.15),
-          margin = list(t = 20, b = 40, l = 40, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.14),
+          margin = list(t = 40, b = 30, l = 45, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })
     
-    # --- Gráfico 3: Distribución por Área Académica ---
+    # --- Gráfico 3: Distribución por Área Académica (Sin choque de leyenda) ---
     output$plot_area_dist <- renderPlotly({
       req(r_data())
       df <- r_data() %>%
@@ -225,15 +216,15 @@ mod_kpis_server <- function(id, r_data) {
       ) %>%
         layout(
           barmode = "group",
-          xaxis = list(title = "Área Académica"),
+          xaxis = list(title = "", tickangle = 0),
           yaxis = list(title = "N° Estudiantes"),
-          legend = list(orientation = "h", x = 0.05, y = -0.2),
-          margin = list(t = 20, b = 50, l = 40, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.15),
+          margin = list(t = 45, b = 30, l = 45, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })
     
-    # --- Gráfico 4: Churn según Antigüedad ---
+    # --- Gráfico 4: Churn según Antigüedad (Sin choque de leyenda) ---
     output$plot_churn_tenure <- renderPlotly({
       req(r_data())
       df <- r_data() %>%
@@ -255,10 +246,10 @@ mod_kpis_server <- function(id, r_data) {
       ) %>%
         layout(
           barmode = "stack",
-          xaxis = list(title = "Antigüedad con el Operador"),
+          xaxis = list(title = "", tickangle = 0),
           yaxis = list(title = "Porcentaje (%)", range = c(0, 100)),
-          legend = list(orientation = "h", x = 0.1, y = -0.2),
-          margin = list(t = 20, b = 50, l = 40, r = 20)
+          legend = list(orientation = "h", x = 0.5, xanchor = "center", y = 1.15),
+          margin = list(t = 45, b = 30, l = 45, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })

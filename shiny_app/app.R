@@ -1,9 +1,3 @@
-# ==============================================================================
-# app.R - Aplicación Central R Shiny
-# Proyecto: Comparativa Shiny vs. Power BI (Analítica de Customer Experience CX)
-# Docente: Fred Torres Cruz | Caso: Comunidad Universitaria UNA Puno (N = 109)
-# ==============================================================================
-
 # Cargar configuración global y módulos
 source("global.R")
 source("modules/mod_kpis.R")
@@ -13,7 +7,7 @@ source("modules/mod_pain_points.R")
 
 # --- INTERFAZ DE USUARIO (UI) ---
 ui <- page_navbar(
-  title = "Telecom CX Analytics | UNA Puno",
+  title = "Telecom CX Analytics UNA Puno",
   id = "nav_main",
   theme = app_theme,
   fillable = FALSE,
@@ -21,36 +15,46 @@ ui <- page_navbar(
     tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
   ),
   
-  # Barra Lateral (Sidebar) con Filtros Globales Reactivos
+  # Barra Lateral (Sidebar) Compacta Sin Scroll
   sidebar = sidebar(
-    title = "Filtros Analíticos",
-    width = 280,
+    title = NULL,
+    width = 250,
     open = "desktop",
     
-    # 1. Filtro Operador
+    # Banner oficial de operadoras
+    tags$div(
+      class = "text-center mb-2",
+      tags$img(
+        src = "moviles.png",
+        style = "max-height: 44px; width: 100%; object-fit: contain; border: 1px solid #e2e8f0; border-radius: 2px;",
+        alt = "Bitel, Claro, Entel, Movistar"
+      )
+    ),
+    
+    # 1. Filtro Operador (Por defecto todas seleccionadas)
     checkboxGroupInput(
       inputId = "filtro_operador",
       label = "Operador Telefónico:",
       choices = c("Entel", "Claro", "Bitel", "Movistar"),
-      selected = c("Entel", "Claro", "Bitel", "Movistar")
+      selected = c("Entel", "Claro", "Bitel", "Movistar"),
+      inline = TRUE
     ),
-    
-    hr(),
     
     # 2. Filtro Área Académica
     selectInput(
       inputId = "filtro_area",
-      label = "Área Académica (UNA):",
+      label = "Área Académica:",
       choices = c("Todas las Áreas", "Ingenierías", "Ciencias Sociales", "Biomédicas"),
       selected = "Todas las Áreas"
     ),
     
-    # 3. Filtro Género
+    # 3. Filtro Género (Por defecto todos seleccionados)
     checkboxGroupInput(
       inputId = "filtro_genero",
       label = "Género:",
       choices = c("Masculino", "Femenino"),
-      selected = c("Masculino", "Femenino")
+      selected = c("Masculino", "Femenino"),
+      inline = TRUE
     ),
     
     # 4. Filtro Antigüedad
@@ -67,57 +71,46 @@ ui <- page_navbar(
       selected = "Todas las Antigüedades"
     ),
     
-    br(),
-    
-    # Botón para restablecer filtros
+    # Botón Restablecer
     actionButton(
       inputId = "btn_reset",
       label = "Restablecer Filtros",
-      icon = icon("rotate-left"),
-      class = "btn btn-outline-secondary w-100"
+      class = "btn btn-outline-secondary btn-sm w-100 mt-1"
     ),
     
-    hr(),
-    
-    # Metadatos del Estudio
+    # Metadatos del Estudio compactos
     div(
-      class = "small text-muted",
-      p(strong("Estudio:"), " CX & Riesgo Churn"),
-      p(strong("Población:"), " Univ. UNA Puno"),
-      p(strong("Muestra:"), " N = 109 encuestados"),
-      p(strong("Semestre:"), " 2026-I")
+      class = "text-muted small text-center mt-2",
+      style = "font-size: 0.74rem;",
+      "Comunidad UNA Puno · N = 109"
     )
   ),
   
-  # Pestaña 1: Resumen Ejecutivo & KPIs
+  # Pestaña 1: Resumen Ejecutivo y KPIs (Sin iconos)
   nav_panel(
-    title = "Resumen Ejecutivo & KPIs",
-    icon = bsicons::bs_icon("speedometer2"),
+    title = "Resumen Ejecutivo y KPIs",
     mod_kpis_ui("kpis")
   ),
   
-  # Pestaña 2: Diagnóstico CSAT (Radar & Boxplots)
+  # Pestaña 2: Diagnóstico CSAT (Sin iconos)
   nav_panel(
     title = "Diagnóstico CSAT (Radar)",
-    icon = bsicons::bs_icon("radar"),
     mod_satisfaction_ui("satisfaction")
   ),
   
-  # Pestaña 3: Inferencia Estadística & Churn
+  # Pestaña 3: Inferencia Estadística y Churn (Sin iconos)
   nav_panel(
-    title = "Inferencia Estadística & Churn",
-    icon = bsicons::bs_icon("graph-up"),
+    title = "Inferencia Estadística y Churn",
     mod_churn_correlations_ui("churn")
   ),
   
-  # Pestaña 4: Puntos de Dolor & Datos
+  # Pestaña 4: Puntos de Dolor y Datos (Sin iconos)
   nav_panel(
-    title = "Puntos de Dolor & Datos",
-    icon = bsicons::bs_icon("geo-alt-fill"),
+    title = "Puntos de Dolor y Datos",
     mod_pain_points_ui("pain_points")
   ),
   
-  # Controles Adicionales en la barra superior (Modo Oscuro)
+  # Modo Oscuro / Claro
   nav_spacer(),
   nav_item(
     input_dark_mode(id = "dark_mode", mode = "light")
@@ -139,12 +132,9 @@ server <- function(input, output, session) {
   r_data <- reactive({
     data <- df_curado
     
-    # 1. Filtro Operador
+    # 1. Filtro Operador: si hay casillas marcadas, filtrar; si está vacío, mostrar todas
     if (!is.null(input$filtro_operador) && length(input$filtro_operador) > 0) {
       data <- data %>% filter(operador_actual %in% input$filtro_operador)
-    } else {
-      # Si desmarcan todo, devolver dataframe vacío
-      return(data[0, ])
     }
     
     # 2. Filtro Área Académica
@@ -152,11 +142,9 @@ server <- function(input, output, session) {
       data <- data %>% filter(area_academica == input$filtro_area)
     }
     
-    # 3. Filtro Género
+    # 3. Filtro Género: si hay casillas marcadas, filtrar; si está vacío, mostrar ambos
     if (!is.null(input$filtro_genero) && length(input$filtro_genero) > 0) {
       data <- data %>% filter(genero %in% input$filtro_genero)
-    } else {
-      return(data[0, ])
     }
     
     # 4. Filtro Antigüedad

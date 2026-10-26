@@ -9,21 +9,13 @@ mod_satisfaction_ui <- function(id) {
       width = 1/2,
       fill = FALSE,
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Benchmark Competitivo: Gráfico de Radar (5 Dimensiones)"),
-          bsicons::bs_icon("radar")
-        ),
+        card_header("Benchmark Competitivo: Gráfico de Radar (5 Dimensiones)"),
         card_body(
           plotlyOutput(ns("plot_radar"), height = "420px")
         )
       ),
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Tabla Resumen de Promedios por Dimensión (Escala 1 al 5)"),
-          bsicons::bs_icon("table")
-        ),
+        card_header("Tabla Resumen de Promedios por Dimensión (Escala 1 al 5)"),
         card_body(
           DTOutput(ns("table_csat_summary")),
           br(),
@@ -197,16 +189,13 @@ mod_satisfaction_server <- function(id, r_data) {
         color = ~operador_actual,
         colors = OPERATOR_COLORS,
         type = "box",
-        boxpoints = "all",
-        jitter = 0.35,
-        pointpos = -1.8,
-        marker = list(size = 5, opacity = 0.6)
+        boxpoints = "outliers"
       ) %>%
         layout(
-          xaxis = list(title = "Operador"),
+          xaxis = list(title = ""),
           yaxis = list(title = y_title, range = c(0.8, 5.2)),
           showlegend = FALSE,
-          margin = list(t = 20, b = 40, l = 40, r = 20)
+          margin = list(t = 20, b = 30, l = 45, r = 20)
         ) %>%
         config(displayModeBar = FALSE)
     })

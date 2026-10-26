@@ -1,115 +1,248 @@
 :root {
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --card-radius: 14px;
-  --card-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
-  --card-hover-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --admin-bg: #f8fafc;
+  --admin-card-bg: #ffffff;
+  --admin-border: #e2e8f0;
+  --admin-text: #1e293b;
+  --admin-muted: #64748b;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: #f8fafc;
-  color: #1e293b;
+  background-color: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.9rem;
 }
 
-/* Navbar Premium */
+/* Navbar sobrio, plano y limpio */
 .navbar {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  font-weight: 600;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1e293b !important;
+  border-bottom: 1px solid #334155 !important;
+  padding: 0.55rem 1.2rem !important;
+  border-radius: 0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
 }
 
 .navbar-brand {
-  font-weight: 800 !important;
-  letter-spacing: -0.5px;
-  font-size: 1.25rem !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.12rem !important;
+  letter-spacing: 0.2px;
 }
 
-/* Tarjetas y Contenedores */
+.nav-link {
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 2px !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Sidebar: Ultra Compacto Sin Scroll */
+.bslib-sidebar-layout>.sidebar {
+  background-color: #ffffff !important;
+  border-right: 1px solid var(--admin-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.65rem 0.85rem !important;
+}
+
+.sidebar .form-group,
+.sidebar .shiny-input-container {
+  margin-bottom: 0.5rem !important;
+}
+
+.sidebar label.control-label {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+  color: #334155 !important;
+}
+
+.sidebar .checkbox-inline,
+.sidebar .form-check-inline {
+  font-size: 0.78rem !important;
+  margin-right: 8px !important;
+}
+
+.sidebar select.form-select,
+.sidebar .form-control {
+  padding: 0.28rem 0.5rem !important;
+  font-size: 0.8rem !important;
+  height: auto !important;
+}
+
+.sidebar .btn {
+  padding: 0.3rem 0.6rem !important;
+  font-size: 0.78rem !important;
+}
+
+/* Tarjetas de Gráficos: SIMPLES Y ELEGANTES, SIN LÍNEA SUPERIOR */
 .card {
-  border-radius: var(--card-radius) !important;
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
-  box-shadow: var(--card-shadow) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background: #ffffff;
-}
-
-.card:hover {
-  box-shadow: var(--card-hover-shadow) !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--admin-border) !important;
+  border-top: none !important;
+  /* Quitar cualquier línea superior */
+  background: var(--admin-card-bg) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  margin-bottom: 1rem;
 }
 
 .card-header {
-  background: transparent !important;
-  border-bottom: 1px solid #f1f5f9 !important;
-  font-weight: 700;
-  color: #0f172a;
-  padding: 1rem 1.25rem;
-}
-
-/* Value Boxes Modernos */
-.bslib-value-box {
-  border-radius: var(--card-radius) !important;
-  box-shadow: var(--card-shadow) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  overflow: hidden;
-}
-
-.bslib-value-box:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--card-hover-shadow) !important;
-}
-
-.bslib-value-box .value-box-value {
-  font-size: 2.2rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -1px;
-}
-
-.bslib-value-box .value-box-title {
-  text-transform: uppercase;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.8px;
-  font-weight: 700;
-  opacity: 0.85;
-}
-
-/* Sidebar Styling */
-.bslib-sidebar-layout>.sidebar {
   background-color: #ffffff !important;
-  border-right: 1px solid #e2e8f0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--admin-border) !important;
+  border-top: none !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  color: #1e293b !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 4px 4px 0 0 !important;
 }
 
-.sidebar h5 {
-  font-size: 0.9rem;
+.kpi-card {
+  border-radius: 4px !important;
+  padding: 1.1rem 1.25rem !important;
+  position: relative;
+  overflow: hidden;
+  border-top: none !important;
+  /* Sin líneas arriba */
+}
+
+/* 1. Muestra Filtrada: Pastel Azul Suave */
+.kpi-card-blue {
+  background-color: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+.kpi-card-blue .kpi-title {
+  color: #1e40af !important;
+}
+
+.kpi-card-blue .kpi-value {
+  color: #1d4ed8 !important;
+}
+
+.kpi-card-blue .kpi-subtext {
+  color: #3b82f6 !important;
+}
+
+/* 2. CSAT Promedio: Pastel Celeste / Cian */
+.kpi-card-cyan {
+  background-color: #f0fdfa !important;
+  border: 1px solid #99f6e4 !important;
+}
+
+.kpi-card-cyan .kpi-title {
+  color: #0f766e !important;
+}
+
+.kpi-card-cyan .kpi-value {
+  color: #0d9488 !important;
+}
+
+.kpi-card-cyan .kpi-subtext {
+  color: #14b8a6 !important;
+}
+
+/* 3. NPS Score: Pastel Verde Menta */
+.kpi-card-green {
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+.kpi-card-green .kpi-title {
+  color: #166534 !important;
+}
+
+.kpi-card-green .kpi-value {
+  color: #15803d !important;
+}
+
+.kpi-card-green .kpi-subtext {
+  color: #22c55e !important;
+}
+
+/* 4. Riesgo Churn: Pastel Coral / Rosa Suave */
+.kpi-card-red {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+}
+
+.kpi-card-red .kpi-title {
+  color: #991b1b !important;
+}
+
+.kpi-card-red .kpi-value {
+  color: #dc2626 !important;
+}
+
+.kpi-card-red .kpi-subtext {
+  color: #ef4444 !important;
+}
+
+.kpi-title {
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #475569;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.35rem;
 }
 
-/* Pills & Badges */
-.badge-custom {
-  padding: 0.35em 0.65em;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 30px;
+.kpi-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
 }
 
-/* Stat callouts */
-.stat-highlight {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1e3a8a;
+.kpi-subtext {
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
-/* DataTables Styling */
+/* Botones Rectos y Limpios */
+.btn {
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+.btn-outline-secondary {
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+  background-color: #ffffff !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+/* Selectores y Checkboxes */
+.form-control,
+.form-select,
+select,
+input {
+  border-radius: 3px !important;
+  border: 1px solid #cbd5e1 !important;
+  font-size: 0.85rem !important;
+}
+
+/* DataTables Estilo Minimalista */
 table.dataTable thead th {
-  background-color: #f1f5f9;
-  color: #334155;
-  font-weight: 700;
-  border-bottom: 2px solid #cbd5e1 !important;
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  border-bottom: 2px solid #e2e8f0 !important;
 }
 
-table.dataTable tbody tr:hover {
-  background-color: #f8fafc !important;
+table.dataTable tbody td {
+  font-size: 0.85rem !important;
 }

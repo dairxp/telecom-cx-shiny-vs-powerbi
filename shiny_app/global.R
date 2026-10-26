@@ -10,14 +10,17 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-# 1. Carga Inteligente de Datos Curados
-# Detecta si se ejecuta desde la raíz o dentro de shiny_app/
-data_path <- if (file.exists("data/processed/dataset_curado.csv")) {
+# 1. Carga Inteligente de Datos Curados (compatible local y shinyapps.io)
+data_path <- if (file.exists("data/dataset_curado.csv")) {
+  "data/dataset_curado.csv"
+} else if (file.exists("shiny_app/data/dataset_curado.csv")) {
+  "shiny_app/data/dataset_curado.csv"
+} else if (file.exists("data/processed/dataset_curado.csv")) {
   "data/processed/dataset_curado.csv"
 } else if (file.exists("../data/processed/dataset_curado.csv")) {
   "../data/processed/dataset_curado.csv"
 } else {
-  stop("No se encontró dataset_curado.csv. Asegúrate de ejecutar fase1_data_prep.py.")
+  stop("No se encontró dataset_curado.csv.")
 }
 
 df_curado <- read_csv(data_path, show_col_types = FALSE)

@@ -11,21 +11,13 @@ mod_churn_correlations_ui <- function(id) {
       width = 1/2,
       fill = FALSE,
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Matriz de Correlación de Spearman (Variables Clave)"),
-          bsicons::bs_icon("grid-3x3")
-        ),
+        card_header("Matriz de Correlación de Spearman (Variables Clave)"),
         card_body(
           plotlyOutput(ns("plot_corr_heatmap"), height = "420px")
         )
       ),
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Hallazgos de Correlación y Drivers de Fuga (Churn)"),
-          bsicons::bs_icon("lightbulb-fill")
-        ),
+        card_header("Interpretación de Correlaciones y Factores de Abandono"),
         card_body(
           uiOutput(ns("ui_corr_insights")),
           br(),
@@ -70,11 +62,7 @@ mod_churn_correlations_ui <- function(id) {
         )
       ),
       card(
-        card_header(
-          class = "d-flex justify-content-between align-items-center",
-          span("Prueba Chi-Cuadrado: Operador vs Riesgo de Churn"),
-          bsicons::bs_icon("calculator-fill")
-        ),
+        card_header("Prueba Chi-Cuadrado: Operador vs Riesgo de Churn"),
         card_body(
           uiOutput(ns("ui_chisq_results"))
         )
