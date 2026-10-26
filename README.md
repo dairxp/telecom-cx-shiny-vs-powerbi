@@ -1,126 +1,80 @@
-# Telecom Customer Experience (CX): R Shiny vs. Microsoft Power BI
+# Telecom CX Analytics: R Shiny vs. Microsoft Power BI
 
 <div align="center">
 
-![R](https://img.shields.io/badge/R-4.6.1-blue?logo=r&logoColor=white)
-![Shiny](https://img.shields.io/badge/Shiny-1.14.0-3884ff?logo=rstudio&logoColor=white)
-![Positron](https://img.shields.io/badge/Positron-IDE-4B32C3?logo=visualstudiocode&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-PBIP%20%7C%20TMDL-F2C811?logo=powerbi&logoColor=black)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Study Sample](https://img.shields.io/badge/Muestra-N%20%3D%20109-informational)
+[![Shiny Live App](https://img.shields.io/badge/ShinyApps.io-App%20en%20Vivo-2563eb?style=for-the-badge&logo=rstudio&logoColor=white)](https://dairdev.shinyapps.io/telecom-cx-una-puno/)
+[![Informe Comparativo](https://img.shields.io/badge/Docs-Informe%20(20%20Pts)-10b981?style=for-the-badge&logo=markdown&logoColor=white)](docs/informe_comparativo.md)
+[![Dataset](https://img.shields.io/badge/Muestra-N%20%3D%20109-f59e0b?style=for-the-badge&logo=databricks&logoColor=white)](data/processed/dataset_curado.csv)
 
-**Estudio Analítico y Comparativo de Plataformas de Business Intelligence y Computación Estadística**  
-*Análisis de Customer Experience (CX), Net Promoter Score (NPS) y Riesgo de Churn en telefonía móvil para la comunidad universitaria de la UNA Puno.*
-
-[📊 Explorar Shiny App](#-cómo-ejecutar-la-aplicación-shiny) • [📈 Modelo Power BI](#-módulo-power-bi-formato-pbip) • [📑 Informe Académico (20 Puntos)](docs/informe_comparativo.md)
+**Estudio Comparativo de Analitica y Visualizacion de Datos (EDA & Reporting)**  
+*Universidad Nacional del Altiplano (UNA Puno) · Docente: Fred Torres Cruz *
 
 </div>
 
 ---
 
-## 📌 Contexto del Proyecto
+## 1. Definicion del Caso: Telecom CX
 
-* **Asignatura:** Analítica y Visualización de Datos / Business Intelligence
-* **Docente Evaluador:** M.Sc. Fred Torres Cruz
-* **Caso de Estudio:** Calidad de servicio y fidelización en telefonía móvil (Claro, Entel, Bitel, Movistar) en estudiantes de la **Universidad Nacional del Altiplano (UNA Puno)**.
-* **Muestra:** $N = 109$ respuestas válidas clasificadas en Ingenierías ($42.2\%$), Ciencias Sociales ($36.7\%$) y Biomédicas ($21.1\%$).
-
----
-
-## 🏛️ Arquitectura del Repositorio
-
-```text
-telecom-cx-shiny-vs-powerbi/
-├── data/
-│   ├── raw/
-│   │   └── respuestas_encuesta_raw.csv      # Data original íntegra (109 respuestas)
-│   └── processed/
-│       ├── dataset_curado.csv               # Data limpia y tipada para R Shiny
-│       └── data_model_powerbi/              # Tablas del Modelo Estrella para Power BI
-│           ├── Fact_Respuestas.csv
-│           ├── Fact_PercepcionOperadores.csv
-│           ├── Fact_FallasLugar.csv
-│           ├── Dim_Estudiante.csv
-│           └── Dim_Operador.csv
-├── shiny_app/
-│   ├── app.R                                # Entrada principal Shiny (bslib / navegación)
-│   ├── global.R                             # Configuración, librerías y datos globales
-│   ├── modules/
-│   │   ├── mod_kpis.R                       # Módulo de tarjetas ejecutivas y NPS
-│   │   ├── mod_satisfaction.R               # Módulo CSAT y gráfico de Radar
-│   │   ├── mod_churn_correlations.R         # Inferencia estadística (ANOVA & Spearman)
-│   │   └── mod_pain_points.R                # Incidencia de fallas territoriales y DT
-│   └── www/
-│       └── custom.css                       # Estilos premium y diseño responsivo
-├── powerbi/
-│   ├── telecom.pbip                         # Proyecto moderno Power BI Project (PBIP)
-│   ├── telecom.SemanticModel/               # Modelo semántico y metadatos TMDL
-│   ├── telecom.Report/                      # Layout y visualizaciones del reporte
-│   └── dax_measures.md                      # Catálogo formal de fórmulas DAX
-├── docs/
-│   ├── imagenes/                            # Evidencias y capturas de pantalla
-│   │   ├── shiny/
-│   │   └── powerbi/
-│   └── informe_comparativo.md               # Informe formal académico comparativo (20 pts)
-├── scripts/
-│   ├── fase1_data_prep.py                   # Pipeline ETL y generación de Modelo Estrella
-│   └── run_shiny.R                          # Script de lanzamiento directo
-├── base.md                                  # Especificación del plan maestro
-└── README.md
-```
+* **Telecom (Telecomunicaciones):** Mercado de telefonia e internet movil en Peru (**Claro**, **Entel**, **Bitel** y **Movistar**).
+* **CX (Customer Experience / Experiencia del Cliente):** Disciplina analitica que mide la calidad percibida en 5 dimensiones (cobertura, velocidad, atencion, precio, datos), la lealtad neta (**NPS**), la satisfaccion (**CSAT**) y el riesgo de fuga o migracion de operador (**Churn**).
+* **Caso Aplicado:** Estudio empirico con **$N = 109$ estudiantes universitarios** de la UNA Puno (Ingenierias $42.2\%$, Ciencias Sociales $36.7\%$, Biomedicas $21.1\%$).
 
 ---
 
-## 🚀 Cómo Ejecutar la Aplicación Shiny
+## 2. Evidencias de los Dashboards
 
-### Opción 1: En Positron / RStudio
-1. Abre el proyecto en **Positron** o **RStudio**.
-2. Abre el archivo [`shiny_app/app.R`](file:///f:/dxp-projects/DevBasics/R%20y%20statistics/telecom-cx-shiny-vs-powerbi/shiny_app/app.R).
-3. Haz clic en el botón **"Run App"** en la barra superior.
+### Modulo R Shiny (Cloud & Reactivo)
+> **App desplegada en vivo:** [https://dairdev.shinyapps.io/telecom-cx-una-puno/](https://dairdev.shinyapps.io/telecom-cx-una-puno/)
 
-### Opción 2: Desde la Consola de R
-```r
-# Instalar paquetes requeridos (si aún no los tienes)
-install.packages(c("shiny", "bslib", "bsicons", "plotly", "DT", "dplyr", "tidyr", "readr", "ggplot2"))
+![Dashboard R Shiny](docs/imagenes/shiny.png)
 
-# Ejecutar el dashboard
-shiny::runApp("shiny_app")
-```
+### Modulo Microsoft Power BI (Desktop & Star Schema)
+> **Proyecto PBIP / PBIX:** Modelado dimensional en estrella con 13 medidas DAX y filtrado cruzado nativo.
+
+![Dashboard Power BI](docs/imagenes/powerbi.png)
 
 ---
 
-## 📊 Módulo Power BI (Formato PBIP)
+## 3. Modo de Ejecucion de Cada Proyecto
 
-El reporte corporativo está implementado en formato **`.pbip` (Power BI Project)**, utilizando arquitectura dimensional (*Star Schema*):
+### A. R Shiny (Exploratory Data Analysis)
+* **Modo Web (Directo):** Abre [dairdev.shinyapps.io/telecom-cx-una-puno](https://dairdev.shinyapps.io/telecom-cx-una-puno/) en cualquier navegador sin instalar dependencias.
+* **Modo Local (Positron / RStudio):**
+  ```r
+  # 1. Instalar paquetes necesarios
+  install.packages(c("shiny", "bslib", "bsicons", "plotly", "DT", "dplyr", "tidyr", "readr", "ggplot2"))
+  
+  # 2. Correr la app
+  shiny::runApp("shiny_app")
+  ```
 
-* **Dimensiones:** `Dim_Estudiante` y `Dim_Operador`.
-* **Hechos:** `Fact_Respuestas`, `Fact_PercepcionOperadores` y `Fact_FallasLugar`.
-* **Catálogo de Medidas DAX:** Consulta las fórmulas documentadas en [`powerbi/dax_measures.md`](file:///f:/dxp-projects/DevBasics/R%20y%20statistics/telecom-cx-shiny-vs-powerbi/powerbi/dax_measures.md).
+### B. Microsoft Power BI (Business Intelligence)
+* **Modo Local:** Abre [powerbi/telecom.pbip](powerbi/telecom.pbip) o [powerbi/telecom-v0.pbix](powerbi/telecom-v0.pbix) en **Power BI Desktop** (Windows).
+* **Distribucion Local:** La publicacion web publica en Power BI Service requiere cuentas institucionales con licencias Pro/Fabric de pago. Por tanto, el proyecto se distribuye en formato abierto `.pbip` y `.pbix` ejecutable en cualquier equipo con Power BI Desktop.
 
 ---
 
-## 📈 Hallazgos Principales del Estudio ($N = 109$)
+## 4. Resumen Ejecutivo del Estudio ($N = 109$)
 
-| Operador | Muestra ($n$) | Market Share | CSAT (1-5) | NPS Score | Churn Alto | Veredicto Analítico |
+| Operador | Muestra ($n$) | Market Share | CSAT (1-5) | NPS Score | Churn Alto | Diagnostico |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Entel** | 28 | $25.7\%$ | **3.86** | **+21.4** | 21.4% | **Líder en Satisfacción:** Calidad superior en velocidad y cobertura. |
-| **Claro** | 34 | **31.2%** | **3.58** | **+5.9** | 20.6% | **Líder en Cuota:** Preferencia mayoritaria y retención estable. |
-| **Bitel** | 33 | $30.3\%$ | **3.35** | **-6.1** | 30.3% | **Económico:** Fuerte en datos/precio, penalizado en zonas rurales. |
-| **Movistar** | 14 | $12.8\%$ | **3.01** | **-42.9** | **50.0%** | **Crisis de Fuga:** El 50% de sus usuarios planea migrar de operador. |
+| **Entel** | 28 | 25.7% | **3.86** | **+21.4** | 21.4% | **Lider en Satisfaccion:** Calidad superior en velocidad y senal. |
+| **Claro** | 34 | **31.2%** | **3.58** | **+5.9** | 20.6% | **Lider en Cuota:** Preferencia mayoritaria y retencion solida. |
+| **Bitel** | 33 | 30.3% | **3.35** | **-6.1** | 30.3% | **Economico:** Fuerte en datos/precio, penalizado en zonas rurales. |
+| **Movistar** | 14 | 12.8% | **3.01** | **-42.9** | **50.0%** | **Crisis Critica:** El 50% de sus clientes planea abandonar la marca. |
 
-### Inferencia Estadística Destacada
-* **ANOVA ($F = 4.333, p = 0.0064$):** Diferencia estadísticamente significativa en satisfacción entre operadores al 99% de confianza.
-* **Correlación de Spearman ($r_s = -0.38$):** Las deficiencias en velocidad de internet son el factor determinante de la fuga de clientes.
-
----
-
-## 📑 Informe Formal Comparativo
-El informe académico detallado con la matriz técnica de 6 ejes de evaluación (arquitectura, modelado, UI/UX, costos y gobernanza) está disponible en:  
-👉 **[docs/informe_comparativo.md](docs/informe_comparativo.md)**
+* **Prueba ANOVA ($F = 4.333, p = 0.0064$):** Hay diferencias estadisticamente significativas en satisfaccion entre operadoras al 99% de confianza.
+* **Correlacion Spearman ($r_s = -0.38$):** La velocidad de internet deficiente es el principal detonante de la fuga de clientes.
 
 ---
 
-## 👥 Créditos y Autores
-* **Investigador / Autor:** Estudiante de la Comunidad Universitaria UNA Puno.
-* **Docente del Curso:** Fred Torres Cruz.
-* **Año Académico:** 2026.
+## 5. Comparativa Tecnica (Shiny vs. Power BI)
+
+| Criterio | R Shiny (Code-First) | Microsoft Power BI (Low-Code) |
+| :--- | :--- | :--- |
+| **Paradigma** | Codigo puro R reactivo (`bslib` + `plotly`) | Visual drag-and-drop con motor VertiPaq |
+| **Estadistica** | **Avanzada:** ANOVA, Chi-cuadrado, Spearman, Radar | Basica/Agregada: Medidas DAX |
+| **Despliegue** | **Abierto y Gratuito:** shinyapps.io, Linux, Docker | Propietario (requiere licencias Pro/Premium) |
+| **Modelado** | Tidyverse / scripts de transformacion | **Superior:** Esquema en Estrella visual en Power Query |
+| **Filtros** | Logica reactiva programada explicita | Filtrado cruzado interactivo automatico (*Cross-filtering*) |
+
