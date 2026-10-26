@@ -7,9 +7,75 @@
         "x": 0,
         "y": 0
       },
-      "nodes": [],
+      "nodes": [
+        {
+          "location": {
+            "x": 309.22710279951087,
+            "y": 25.140414861748845
+          },
+          "nodeIndex": "Fact_Respuestas",
+          "nodeLineageTag": "db5e6ffa-2427-4901-a973-3673b3c1d6cf",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 192.9318412085496,
+            "y": 435.3901141554951
+          },
+          "nodeIndex": "Dim_Operador",
+          "nodeLineageTag": "641fd67e-67bc-4d1b-b8b6-57f922637ddc",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 733.84005014978038,
+            "y": 0
+          },
+          "nodeIndex": "Fact_PercepcionOperadores",
+          "nodeLineageTag": "f411369e-16fb-42ae-b101-dd3d9b6d7992",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 5.0280829723497646,
+            "y": 67.736266244260392
+          },
+          "nodeIndex": "Dim_Estudiante",
+          "nodeLineageTag": "844c143c-f0db-4070-a810-7a5b4e6d51c8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 773.66013606336094,
+            "y": 320.75781291704931
+          },
+          "nodeIndex": "Fact_FallasLugar",
+          "nodeLineageTag": "499c496b-116a-4117-8ae6-e6f7bc67eeee",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        }
+      ],
       "name": "Todas las tablas",
-      "zoomValue": 100,
+      "zoomValue": 79.553182037699827,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

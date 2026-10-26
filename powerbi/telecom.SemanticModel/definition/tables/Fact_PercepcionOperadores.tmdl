@@ -1,0 +1,56 @@
+table Fact_PercepcionOperadores
+	lineageTag: f411369e-16fb-42ae-b101-dd3d9b6d7992
+
+	column id_respuesta
+		dataType: string
+		lineageTag: 66f94a67-6848-4231-a530-2093e19b4bf4
+		summarizeBy: none
+		sourceColumn: id_respuesta
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_operador_evaluado
+		dataType: int64
+		formatString: 0
+		lineageTag: 602caadb-2a14-4102-8e3c-1ddfa88d36c8
+		summarizeBy: sum
+		sourceColumn: id_operador_evaluado
+
+		annotation SummarizationSetBy = Automatic
+
+	column operador_evaluado
+		dataType: string
+		lineageTag: 16771c43-521b-4dc9-b510-5cb9368d73dd
+		summarizeBy: none
+		sourceColumn: operador_evaluado
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_percepcion
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b98d4dc-4455-4b7e-8592-aed993082869
+		summarizeBy: sum
+		sourceColumn: score_percepcion
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_cliente_actual
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f97abfe-5d2a-481c-afd5-4febb15514ce
+		summarizeBy: sum
+		sourceColumn: es_cliente_actual
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_PercepcionOperadores = m
+		mode: import
+		source =
+				let
+				  Origen = Csv.Document(File.Contents("F:\dxp-projects\DevBasics\R y statistics\telecom-cx-shiny-vs-powerbi\data\processed\data_model_powerbi\Fact_PercepcionOperadores.csv"), [Delimiter = ",", Columns = 5, QuoteStyle = QuoteStyle.None]),
+				  #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"id_respuesta", type text}, {"id_operador_evaluado", Int64.Type}, {"operador_evaluado", type text}, {"score_percepcion", Int64.Type}, {"es_cliente_actual", Int64.Type}}, "es")
+				in
+				  #"Tipo de columna cambiado"
+

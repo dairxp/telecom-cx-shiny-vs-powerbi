@@ -1,0 +1,30 @@
+table Fact_FallasLugar
+	lineageTag: 499c496b-116a-4117-8ae6-e6f7bc67eeee
+
+	column id_respuesta
+		dataType: string
+		lineageTag: e5ef433c-fe4e-436c-ba31-f01f335e9af3
+		summarizeBy: none
+		sourceColumn: id_respuesta
+
+		annotation SummarizationSetBy = Automatic
+
+	column lugar_falla
+		dataType: string
+		lineageTag: 48685cdc-e338-4098-b12c-e32ae53d1ce8
+		summarizeBy: none
+		sourceColumn: lugar_falla
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_FallasLugar = m
+		mode: import
+		source =
+				let
+				  Origen = Csv.Document(File.Contents("F:\dxp-projects\DevBasics\R y statistics\telecom-cx-shiny-vs-powerbi\data\processed\data_model_powerbi\Fact_FallasLugar.csv"), [Delimiter = ",", Columns = 2, QuoteStyle = QuoteStyle.None]),
+				  #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true])
+				in
+				  #"Encabezados promovidos"
+
+	annotation PBI_ResultType = Table
+

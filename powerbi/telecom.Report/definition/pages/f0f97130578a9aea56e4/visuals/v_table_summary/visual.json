@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "v_table_summary",
+  "position": {
+    "x": 960.00000000000011,
+    "y": 420,
+    "z": 10000,
+    "height": 221.42857142857144,
+    "width": 565.71428571428578,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Operador"
+                    }
+                  },
+                  "Property": "operador"
+                }
+              },
+              "queryRef": "Dim_Operador.operador",
+              "nativeQueryRef": "operador"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "Total Encuestados"
+                }
+              },
+              "queryRef": "Fact_Respuestas.Total Encuestados",
+              "nativeQueryRef": "Total Encuestados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "CSAT Promedio"
+                }
+              },
+              "queryRef": "Fact_Respuestas.CSAT Promedio",
+              "nativeQueryRef": "CSAT Promedio"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "NPS Score"
+                }
+              },
+              "queryRef": "Fact_Respuestas.NPS Score",
+              "nativeQueryRef": "NPS Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "% Churn Alto"
+                }
+              },
+              "queryRef": "Fact_Respuestas.% Churn Alto",
+              "nativeQueryRef": "% Churn Alto"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

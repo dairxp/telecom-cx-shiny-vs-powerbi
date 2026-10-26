@@ -1,6 +1,3 @@
-# ==============================================================================
-# Script de Despliegue a shinyapps.io
-# ==============================================================================
 # Instrucciones:
 # 1. Copia tu token desde: https://www.shinyapps.io/admin/#/tokens
 # 2. Descomenta y ejecuta la línea rsconnect::setAccountInfo(...) con tus credenciales.

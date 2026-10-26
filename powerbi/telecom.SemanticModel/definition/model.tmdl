@@ -7,9 +7,24 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
+/// Errores en las consultas cargadas en 25-Oct-26 7:18:24 PM.
+queryGroup 'Errores en las consultas: 25-Oct-26 7:18:24 PM'
+
+	annotation PBI_QueryGroupOrder = 0
+
 annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Fact_Respuestas","Dim_Operador","Fact_PercepcionOperadores","Dim_Estudiante","Fact_FallasLugar","Errores en Fact_Respuestas"]
+
+ref table Fact_Respuestas
+ref table DateTableTemplate_ed8ead5a-2298-417b-b80d-77131266b18d
+ref table LocalDateTable_ef7417a5-060a-4fad-8f4f-835c5c60664e
+ref table Dim_Operador
+ref table Fact_PercepcionOperadores
+ref table Dim_Estudiante
+ref table Fact_FallasLugar
 
 ref cultureInfo es-ES
 

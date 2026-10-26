@@ -1,0 +1,38 @@
+table Dim_Operador
+	lineageTag: 641fd67e-67bc-4d1b-b8b6-57f922637ddc
+
+	column id_operador
+		dataType: int64
+		formatString: 0
+		lineageTag: 13c27e51-bfa3-499f-a5a6-0aa808027fe8
+		summarizeBy: none
+		sourceColumn: id_operador
+
+		annotation SummarizationSetBy = Automatic
+
+	column operador
+		dataType: string
+		lineageTag: d3403ae5-8595-4e68-9e11-b9089e9267b8
+		summarizeBy: none
+		sourceColumn: operador
+
+		annotation SummarizationSetBy = Automatic
+
+	column color_hex
+		dataType: string
+		lineageTag: ab313b13-5d39-43d3-a24e-010914d7ae4d
+		summarizeBy: none
+		sourceColumn: color_hex
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Operador = m
+		mode: import
+		source =
+				let
+				  Origen = Csv.Document(File.Contents("F:\dxp-projects\DevBasics\R y statistics\telecom-cx-shiny-vs-powerbi\data\processed\data_model_powerbi\Dim_Operador.csv"), [Delimiter = ",", Columns = 3, QuoteStyle = QuoteStyle.None]),
+				  #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"id_operador", Int64.Type}, {"operador", type text}, {"color_hex", type text}}, "es")
+				in
+				  #"Tipo de columna cambiado"
+

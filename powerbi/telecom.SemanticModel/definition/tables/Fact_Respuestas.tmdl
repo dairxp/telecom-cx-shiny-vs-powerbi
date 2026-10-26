@@ -1,0 +1,268 @@
+table Fact_Respuestas
+	lineageTag: db5e6ffa-2427-4901-a973-3673b3c1d6cf
+
+	measure 'Total Encuestados' = COUNTROWS(Fact_Respuestas)
+		formatString: #,##0
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000001
+
+	measure 'CSAT Promedio' = AVERAGE(Fact_Respuestas[csat_promedio])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000002
+
+	measure '% Promotores' = DIVIDE(CALCULATE(COUNTROWS(Fact_Respuestas), Fact_Respuestas[nps_category] = "Promotor"), [Total Encuestados], 0)
+		formatString: 0.0%
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000003
+
+	measure '% Detractores' = DIVIDE(CALCULATE(COUNTROWS(Fact_Respuestas), Fact_Respuestas[nps_category] = "Detractor"), [Total Encuestados], 0)
+		formatString: 0.0%
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000004
+
+	measure '% Pasivos' = DIVIDE(CALCULATE(COUNTROWS(Fact_Respuestas), Fact_Respuestas[nps_category] = "Pasivo"), [Total Encuestados], 0)
+		formatString: 0.0%
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000005
+
+	measure 'NPS Score' = ([% Promotores] - [% Detractores]) * 100
+		formatString: #,##0.0
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000006
+
+	measure '% Churn Alto' = DIVIDE(CALCULATE(COUNTROWS(Fact_Respuestas), Fact_Respuestas[riesgo_churn] = "Alto"), [Total Encuestados], 0)
+		formatString: 0.0%
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000007
+
+	measure '% Churn Bajo' = DIVIDE(CALCULATE(COUNTROWS(Fact_Respuestas), Fact_Respuestas[riesgo_churn] = "Bajo"), [Total Encuestados], 0)
+		formatString: 0.0%
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000008
+
+	measure 'CSAT Cobertura' = AVERAGE(Fact_Respuestas[sat_cobertura])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000009
+
+	measure 'CSAT Velocidad' = AVERAGE(Fact_Respuestas[sat_velocidad])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000010
+
+	measure 'CSAT Atención' = AVERAGE(Fact_Respuestas[sat_atencion])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000011
+
+	measure 'CSAT Precio' = AVERAGE(Fact_Respuestas[sat_precio])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000012
+
+	measure 'CSAT Datos' = AVERAGE(Fact_Respuestas[sat_datos])
+		formatString: 0.00
+		lineageTag: a7b1c2d3-1111-4444-8888-abcdef000013
+
+	column id_respuesta
+		dataType: string
+		lineageTag: 320665e6-f3e3-4e51-a6e2-ae7b2ce36c49
+		summarizeBy: none
+		sourceColumn: id_respuesta
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_estudiante
+		dataType: string
+		lineageTag: 99d4a01f-35ef-4b68-9702-9a86d772e664
+		summarizeBy: none
+		sourceColumn: id_estudiante
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_operador
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a9f5e51-2422-4c88-ae8e-5276c7ea6890
+		summarizeBy: none
+		sourceColumn: id_operador
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 611d86af-7a70-408e-89b6-3966d7c37fe5
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		variation Variation
+			isDefault
+			relationship: eaeb330d-e204-497a-8cde-4dc9ce295ff2
+			defaultHierarchy: LocalDateTable_ef7417a5-060a-4fad-8f4f-835c5c60664e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_cobertura
+		dataType: int64
+		formatString: 0
+		lineageTag: cc32ef2f-9d0e-442a-9b79-f52bca45a4cb
+		summarizeBy: sum
+		sourceColumn: sat_cobertura
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_velocidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d15368f-ea63-4dcc-a690-cc422237dd33
+		summarizeBy: sum
+		sourceColumn: sat_velocidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_atencion
+		dataType: int64
+		formatString: 0
+		lineageTag: 28a40f38-92ab-452b-a012-ff4da5ccfec7
+		summarizeBy: sum
+		sourceColumn: sat_atencion
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_precio
+		dataType: int64
+		formatString: 0
+		lineageTag: e250d958-86ae-41f7-87d5-8a3db1d83769
+		summarizeBy: sum
+		sourceColumn: sat_precio
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_datos
+		dataType: int64
+		formatString: 0
+		lineageTag: c7708982-fb21-40a1-b5e7-ecb6baea1dea
+		summarizeBy: sum
+		sourceColumn: sat_datos
+
+		annotation SummarizationSetBy = Automatic
+
+	column csat_promedio
+		dataType: double
+		formatString: 0.00
+		lineageTag: 09a43e95-a49a-4aaf-bd3b-4b6115a6ba9c
+		summarizeBy: average
+		sourceColumn: csat_promedio
+
+		annotation SummarizationSetBy = Automatic
+
+	column factor_importante
+		dataType: string
+		lineageTag: 26dee2a7-00e7-4a19-971b-5fb66935d772
+		summarizeBy: none
+		sourceColumn: factor_importante
+
+		annotation SummarizationSetBy = Automatic
+
+	column problema_principal
+		dataType: string
+		lineageTag: 4b5e78e5-1861-4d16-b305-fbdbc749a52b
+		summarizeBy: none
+		sourceColumn: problema_principal
+
+		annotation SummarizationSetBy = Automatic
+
+	column sat_general_texto
+		dataType: string
+		lineageTag: a5fcf3d9-2166-4da0-9510-f99bdb53fab1
+		summarizeBy: none
+		sourceColumn: sat_general_texto
+
+		annotation SummarizationSetBy = Automatic
+
+	column recomienda_texto
+		dataType: string
+		lineageTag: 32098851-391c-49f8-8521-00f0988fbb3b
+		summarizeBy: none
+		sourceColumn: recomienda_texto
+
+		annotation SummarizationSetBy = Automatic
+
+	column nps_category
+		dataType: string
+		lineageTag: 3d160326-7aa2-4a7f-89cc-c2026f469fdd
+		summarizeBy: none
+		sourceColumn: nps_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column nps_weight
+		dataType: int64
+		formatString: 0
+		lineageTag: a422880b-0870-4f7b-8aec-cd9d8896ef77
+		summarizeBy: sum
+		sourceColumn: nps_weight
+
+		annotation SummarizationSetBy = Automatic
+
+	column cambio_texto
+		dataType: string
+		lineageTag: d2e82d86-4313-4793-8dc4-2ae5154a5a92
+		summarizeBy: none
+		sourceColumn: cambio_texto
+
+		annotation SummarizationSetBy = Automatic
+
+	column riesgo_churn
+		dataType: string
+		lineageTag: 302b3596-2d22-469a-83fe-043ed72a30ef
+		summarizeBy: none
+		sourceColumn: riesgo_churn
+
+		annotation SummarizationSetBy = Automatic
+
+	column falla_universidad
+		dataType: int64
+		formatString: 0
+		lineageTag: b11620e5-34fc-44bf-9e20-ed1edc51cddf
+		summarizeBy: sum
+		sourceColumn: falla_universidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column falla_casa
+		dataType: int64
+		formatString: 0
+		lineageTag: a0354eda-033c-456a-8c12-d43688102ffb
+		summarizeBy: sum
+		sourceColumn: falla_casa
+
+		annotation SummarizationSetBy = Automatic
+
+	column falla_centro_puno
+		dataType: int64
+		formatString: 0
+		lineageTag: 67c4bf99-00fd-4edb-b35b-50924dc50c22
+		summarizeBy: sum
+		sourceColumn: falla_centro_puno
+
+		annotation SummarizationSetBy = Automatic
+
+	column falla_rural
+		dataType: int64
+		formatString: 0
+		lineageTag: 93166295-be6c-465b-bde8-afdb68cdc2d2
+		summarizeBy: sum
+		sourceColumn: falla_rural
+
+		annotation SummarizationSetBy = Automatic
+
+	column sin_fallas
+		dataType: int64
+		formatString: 0
+		lineageTag: fca8b0fd-0990-49ed-b543-cc0c6fd39bde
+		summarizeBy: sum
+		sourceColumn: sin_fallas
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Respuestas = m
+		mode: import
+		source =
+				let
+				  Origen = Csv.Document(File.Contents("F:\dxp-projects\DevBasics\R y statistics\telecom-cx-shiny-vs-powerbi\data\processed\data_model_powerbi\Fact_Respuestas.csv"), [Delimiter = ",", Columns = 23, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				  #"Tipo de columna cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"id_respuesta", type text}, {"id_estudiante", type text}, {"id_operador", Int64.Type}, {"timestamp", type datetime}, {"sat_cobertura", Int64.Type}, {"sat_velocidad", Int64.Type}, {"sat_atencion", Int64.Type}, {"sat_precio", Int64.Type}, {"sat_datos", Int64.Type}, {"csat_promedio", type number}, {"factor_importante", type text}, {"problema_principal", type text}, {"sat_general_texto", type text}, {"recomienda_texto", type text}, {"nps_category", type text}, {"nps_weight", Int64.Type}, {"cambio_texto", type text}, {"riesgo_churn", type text}, {"falla_universidad", Int64.Type}, {"falla_casa", Int64.Type}, {"falla_centro_puno", Int64.Type}, {"falla_rural", Int64.Type}, {"sin_fallas", Int64.Type}}, "en-US")
+				in
+				  #"Tipo de columna cambiado"
+

@@ -1,0 +1,52 @@
+table Dim_Estudiante
+	lineageTag: 844c143c-f0db-4070-a810-7a5b4e6d51c8
+
+	column id_estudiante
+		dataType: string
+		lineageTag: 8144c0a8-ca48-47e3-8f03-ba707d937ab7
+		summarizeBy: none
+		sourceColumn: id_estudiante
+
+		annotation SummarizationSetBy = Automatic
+
+	column edad
+		dataType: string
+		lineageTag: ec0cfbad-b6cb-4ddb-a181-8643aec5c7a7
+		summarizeBy: none
+		sourceColumn: edad
+
+		annotation SummarizationSetBy = Automatic
+
+	column genero
+		dataType: string
+		lineageTag: 249184fd-50b9-4a59-85a5-685d9651cbf4
+		summarizeBy: none
+		sourceColumn: genero
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_academica
+		dataType: string
+		lineageTag: adb00096-ee6f-4fe3-b588-8dd6a224f556
+		summarizeBy: none
+		sourceColumn: area_academica
+
+		annotation SummarizationSetBy = Automatic
+
+	column antiguedad_uso
+		dataType: string
+		lineageTag: 5d39c8b7-d68c-4f8b-816a-8651137402c3
+		summarizeBy: none
+		sourceColumn: antiguedad_uso
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Estudiante = m
+		mode: import
+		source =
+				let
+				  Origen = Csv.Document(File.Contents("F:\dxp-projects\DevBasics\R y statistics\telecom-cx-shiny-vs-powerbi\data\processed\data_model_powerbi\Dim_Estudiante.csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true])
+				in
+				  #"Encabezados promovidos"
+

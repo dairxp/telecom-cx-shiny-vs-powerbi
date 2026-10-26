@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "v_chart_area_academic",
+  "position": {
+    "x": 364.28571428571433,
+    "y": 660,
+    "z": 4000,
+    "height": 382.85714285714289,
+    "width": 742.85714285714289,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Estudiante"
+                    }
+                  },
+                  "Property": "area_academica"
+                }
+              },
+              "queryRef": "Dim_Estudiante.area_academica",
+              "nativeQueryRef": "area_academica",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Operador"
+                    }
+                  },
+                  "Property": "operador"
+                }
+              },
+              "queryRef": "Dim_Operador.operador",
+              "nativeQueryRef": "operador"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "Total Encuestados"
+                }
+              },
+              "queryRef": "Fact_Respuestas.Total Encuestados",
+              "nativeQueryRef": "Total Encuestados"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

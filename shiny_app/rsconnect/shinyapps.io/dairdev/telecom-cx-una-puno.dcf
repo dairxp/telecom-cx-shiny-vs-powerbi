@@ -1,0 +1,10 @@
+name: telecom-cx-una-puno
+title: Telecom CX Analytics - UNA Puno
+username: dairdev
+account: dairdev
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 18275879
+bundleId: 12738559
+url: https://dairdev.shinyapps.io/telecom-cx-una-puno/
+version: 1

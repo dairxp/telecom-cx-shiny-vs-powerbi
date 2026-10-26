@@ -1,0 +1,22 @@
+relationship eaeb330d-e204-497a-8cde-4dc9ce295ff2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Respuestas.timestamp
+	toColumn: LocalDateTable_ef7417a5-060a-4fad-8f4f-835c5c60664e.Date
+
+relationship AutoDetected_75584955-5326-4d64-9ce8-56e45392ce48
+	fromColumn: Fact_Respuestas.id_operador
+	toColumn: Dim_Operador.id_operador
+
+relationship AutoDetected_5e83be48-99fa-42a3-a9f1-777fd0eaafac
+	fromColumn: Fact_PercepcionOperadores.id_respuesta
+	toColumn: Fact_Respuestas.id_respuesta
+
+relationship AutoDetected_caf9f603-cea9-42df-9f02-4e5e5a7c055e
+	fromColumn: Fact_FallasLugar.id_respuesta
+	toColumn: Fact_Respuestas.id_respuesta
+
+relationship 59f5bb91-9461-bdfe-9dfc-25fba48cd287
+	crossFilteringBehavior: bothDirections
+	fromColumn: Fact_Respuestas.id_estudiante
+	toColumn: Dim_Estudiante.id_estudiante
+

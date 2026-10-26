@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "v_donut_market",
+  "position": {
+    "x": 364.28571428571433,
+    "y": 207.14285714285717,
+    "z": 6000,
+    "height": 434.28571428571433,
+    "width": 580,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Operador"
+                    }
+                  },
+                  "Property": "operador"
+                }
+              },
+              "queryRef": "Dim_Operador.operador",
+              "nativeQueryRef": "operador",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Respuestas"
+                    }
+                  },
+                  "Property": "Total Encuestados"
+                }
+              },
+              "queryRef": "Fact_Respuestas.Total Encuestados",
+              "nativeQueryRef": "Total Encuestados"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
